@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gcy.mapper.UserMapper">
+      <!--映射model字段和数据库的字段-->
+      <resultMap id="UserModel" type="gcy.model.User">
+          <id property="id" column="id"/>
+          <result property="name" column="name"/>
+          <result property="phone" column="phone"/>
+          <result property="age" column="age"/>
+          <result property="sex" column="sex"/>
+      </resultMap>
+      <insert id="insertUserInfo" >
+          INSERT INTO user_info (name, age,sex,phone) VALUES (#{user.name},#{user.age},#{user.sex},#{user.phone})
+      </insert>
+
+
+
+</mapper>
